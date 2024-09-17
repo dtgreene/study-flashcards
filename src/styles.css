@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  src: url('./assets/Montserrat-VariableFont_wght.ttf') format('opentype');
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-white overflow-hidden;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+  }
+
+  .flash-card {
+    @apply w-[600px] h-[360px] flex-shrink-0;
+    perspective: 1000px;
+  }
+
+  .flash-card-inner {
+    @apply relative w-full h-full transition-transform text-zinc-900;
+    transform-style: preserve-3d;
+    transition-duration: 500ms;
+  }
+
+  .flash-card.flipped .flash-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flash-card-blur {
+    filter: blur(6px);
+  }
+
+  .flash-card-front,
+  .flash-card-back {
+    @apply absolute w-full h-full p-4 bg-zinc-100 rounded;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  .flash-card-back {
+    transform: rotateY(180deg);
+  }
+}
