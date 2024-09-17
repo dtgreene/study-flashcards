@@ -37,6 +37,7 @@ const BackMarkdown = ({ data }) => (
   <Markdown
     children={data.back}
     remarkPlugins={[remarkGfm]}
+    className="w-full"
     components={{
       ul: ({ children, className, node, ...rest }) => {
         return (
@@ -157,9 +158,7 @@ const Flashcard = ({ data, cardNumber, cardTotal, flipped }) => {
             })}
           >
             <div className="flex-1 flex flex-col justify-center items-center">
-              <div>
-                <BackMarkdown data={data} />
-              </div>
+              <BackMarkdown data={data} />
             </div>
             {data.back_link && (
               <div className="text-center">
