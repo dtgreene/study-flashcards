@@ -2,9 +2,6 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import clsx from 'clsx';
-// import { sql } from '@codemirror/lang-sql';
-// import { xcodeLight } from '@uiw/codemirror-theme-xcode';
-// import ReactCodeMirror from '@uiw/react-codemirror';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -37,7 +34,7 @@ const BackMarkdown = ({ data }) => (
   <Markdown
     children={data.back}
     remarkPlugins={[remarkGfm]}
-    className="w-full"
+    className="w-full text-center"
     components={{
       ul: ({ children, className, node, ...rest }) => {
         return (
