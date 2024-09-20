@@ -35,12 +35,16 @@
 
   .flash-card-front,
   .flash-card-back {
-    @apply absolute w-full h-full p-4 bg-zinc-100 rounded;
+    @apply absolute w-full h-full p-4 bg-zinc-100 rounded overflow-hidden;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
   }
 
   .flash-card-back {
     transform: rotateY(180deg);
+  }
+
+  .justify-safe-center {
+    justify-content: safe center;
   }
 }
