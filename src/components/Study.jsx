@@ -8,6 +8,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 import { state, studyOptions } from '../state';
 
+const syntaxStyle = {
+  padding: 16,
+  margin: 0,
+  borderRadius: 4,
+  background: 'rgb(235, 238, 239)',
+};
+
 function handleStartClick() {
   state.step = 0;
 }
@@ -34,7 +41,7 @@ const BackMarkdown = ({ data }) => (
   <Markdown
     children={data.back}
     remarkPlugins={[remarkGfm]}
-    className="w-full text-center"
+    className="w-full flex justify-center"
     components={{
       ul: ({ children, className, node, ...rest }) => {
         return (
@@ -53,7 +60,7 @@ const BackMarkdown = ({ data }) => (
               PreTag="div"
               children={String(children).replace(/\n$/, '')}
               language={match[1]}
-              customStyle={{ padding: 0, margin: 0 }}
+              customStyle={syntaxStyle}
             />
           );
         }

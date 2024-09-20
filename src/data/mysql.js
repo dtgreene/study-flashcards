@@ -165,4 +165,18 @@ ORDER BY RatingCode ASC;
 ~~~`,
     back_link: 'https://www.w3schools.com/sql/sql_distinct.asp',
   },
+  {
+    front: 'Cardinality',
+    back: `The term cardinality refers to the uniqueness of data values contained in a particular column of a database table. The lower the cardinality, the more duplicated elements in a column. Thus, a column with the lowest possible cardinality would have the same value for every row. SQL databases use cardinality to help determine the optimal query plan for a given query.`,
+    back_link: 'https://en.wikipedia.org/wiki/Cardinality_(SQL_statements)',
+  },
+  {
+    front: 'Check constraint',
+    back: `~~~sql
+CREATE TABLE Horse (
+  Height INT CHECK (Height >= 10.0)
+);
+~~~`,
+    back_link: 'https://dev.mysql.com/doc/refman/8.4/en/create-table-check-constraints.html',
+  }
 ];
