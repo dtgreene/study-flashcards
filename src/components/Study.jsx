@@ -8,6 +8,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 import { state, studyOptions } from '../state';
 
+const codeLanguageExp = /language-(\w+)/;
 const syntaxStyle = {
   padding: 16,
   margin: 0,
@@ -51,7 +52,7 @@ const BackMarkdown = ({ data }) => (
         );
       },
       code: ({ children, className, node, ...rest }) => {
-        const match = (className || '').match(/language-(\w+)/);
+        const match = (className || '').match(codeLanguageExp);
 
         if (match) {
           return (
